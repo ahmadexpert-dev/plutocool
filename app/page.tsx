@@ -5,14 +5,6 @@ import Footer from "./Footer";
 import CardGridSection from "@/components/card-grid-section";
 import AboutSection from "@/components/about-section";
 
-export function Home2() {
-  return (
-    <div className='flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black'>
-      <HeroSection />
-    </div>
-  );
-}
-
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
