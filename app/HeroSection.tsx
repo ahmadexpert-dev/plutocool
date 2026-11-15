@@ -50,9 +50,9 @@ const TIME_SLOTS = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM"];
 
 export const SERVICES = [
   {
-    id: "AC Repairing",
-    title: "AC Repairing",
-    description: "Reliable fault diagnosis, repairs, and routine servicing to keep your AC cooling efficiently.",
+    id: "AC Repair & Maintenance",
+    title: "AC Repair & Maintenance",
+    description: "Fault diagnosis, repairs, and routine servicing for all types of AC units.",
     icon: Wrench,
     problems: [
       "AC is running but not cooling",
@@ -63,10 +63,9 @@ export const SERVICES = [
     cta: "Request AC Service",
   },
   {
-    id: "AC Installation & Replacement",
-    title: "AC Installation & Replacement",
-    description:
-      "Professional installation of new split and inverter units, or replacement of your old AC, with insulated piping and full testing.",
+    id: "AC Duct & Coil Cleaning",
+    title: "AC Duct & Coil Cleaning",
+    description: "Cleaning and sanitization of AC coils, ducts, and vents.",
     icon: Droplets,
     problems: [
       "Dust or debris coming from the vents",
@@ -77,9 +76,9 @@ export const SERVICES = [
     cta: "Book a Cleaning",
   },
   {
-    id: "AC Maintenance",
-    title: "AC Maintenance",
-    description: "Coordinated mechanical, electrical, and plumbing support with planned annual maintenance.",
+    id: "MEP Services / AMC",
+    title: "MEP Services / AMC",
+    description: "Coordinated mechanical, electrical, and plumbing support with planned annual maintenance contracts.",
     icon: Building2,
     problems: [
       "Preventive maintenance for building systems",
@@ -90,9 +89,9 @@ export const SERVICES = [
     cta: "Request MEP Support",
   },
   {
-    id: "AC Coil & Duct Cleaning",
-    title: "AC Coil & Duct Cleaning",
-    description: "Professional AC installation, replacement, and repair for split, window, and ducted systems.",
+    id: "AC Installation & Repair",
+    title: "AC Installation & Repair",
+    description: "AC installation, replacement, and repair for split, window, and ducted systems.",
     icon: PlugZap,
     problems: [
       "Installing an AC in a new room or property",
@@ -103,9 +102,9 @@ export const SERVICES = [
     cta: "Request Installation or Repair",
   },
   {
-    id: "Full System Cleaning",
-    title: "Full System Cleaning",
-    description: "Interior and exterior painting with careful surface preparation and a clean, even finish.",
+    id: "Painting Services",
+    title: "Painting Services",
+    description: "Interior and exterior painting with surface preparation and priming.",
     icon: Paintbrush,
     problems: [
       "Walls need repainting or a color refresh",
@@ -116,8 +115,8 @@ export const SERVICES = [
     cta: "Request a Painting Quote",
   },
   {
-    id: "Annual Maintenance (AMC)",
-    title: "Annual Maintenance (AMC)",
+    id: "Ducting / HVAC & VAV",
+    title: "Ducting / HVAC & VAV",
     description: "Ducting installation and airflow balancing for HVAC systems, including VAV equipment.",
     icon: Wind,
     problems: [

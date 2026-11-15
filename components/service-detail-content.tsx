@@ -31,7 +31,7 @@ export type ServiceDetail = {
   faqs?: { question: string; answer: string }[];
   /** Sticky footer */
   priceLabel?: string; // default "Starting from"
-  price: string; // e.g. "AED 600"
+  price?: string; // e.g. "AED 600"
   ctaLabel?: string; // default "Book now"
   ctaHref?: string; // link target; omit to use onCtaClick instead
 };

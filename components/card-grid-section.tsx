@@ -3,18 +3,16 @@
 import * as React from "react";
 import Image from "next/image";
 import {
+  Building2,
   Droplets,
-  Wind,
-  ShieldCheck,
-  BadgeCheck,
-  CalendarCheck,
-  Clock,
   Fan,
-  Leaf,
-  Percent,
-  PhoneCall,
+  Paintbrush,
+  ShieldCheck,
   Snowflake,
   Sparkles,
+  Thermometer,
+  Wind,
+  Wrench,
   Zap,
 } from "lucide-react";
 
@@ -38,139 +36,245 @@ type Item = {
 /* -------------------------------------------------------------------------- */
 
 const ITEMS: Item[] = [
-  /* ------------------------------ 1. Repairing ----------------------------- */
+  /* ----------------------- 1. AC Repair & Maintenance ---------------------- */
   {
     id: "1",
-    title: "AC Repairing",
+    title: "AC Repair & Maintenance",
     description:
-      "Fast diagnosis and repair of weak cooling, water leaks, strange noises, and electrical faults in all AC types.",
+      "Diagnosis and repair of cooling problems, water leaks, and electrical faults, plus routine servicing of indoor and outdoor units.",
     image: "/grid/ac-repair.png",
-    alt: "Technician repairing an AC unit",
+    alt: "Technician repairing and servicing an AC unit",
     detail: {
-      rating: "4.8",
       highlights: [
-        { label: "Same-day visits", icon: Clock },
-        { label: "Genuine spare parts", icon: BadgeCheck },
-        { label: "Repair warranty", icon: ShieldCheck },
+        { label: "Split & window units", icon: Snowflake },
+        { label: "Ducted & cassette units", icon: Fan },
+        { label: "Homes & businesses", icon: Building2 },
       ],
       steps: [
         {
           title: "Inspection & diagnosis",
           description:
-            "The technician checks airflow, cooling, gas pressure, drainage, and the electrical components to find the root cause of the fault.",
+            "The technician checks airflow, cooling, gas pressure, drainage, and the electrical components to find the cause of the fault.",
         },
         {
-          title: "Quote & approval",
-          description:
-            "You get a clear price for parts and labour before any work begins. Nothing is repaired without your approval.",
+          title: "Quote",
+          description: "The technician explains the problem and the work needed before starting.",
         },
         {
-          title: "Repair",
+          title: "Repair & servicing",
           description:
-            "Faulty parts such as capacitors, fan motors, sensors, or control boards are repaired or replaced, and any leaks or blocked drains are fixed.",
+            "Faulty parts such as capacitors, fan motors, sensors, or control boards are repaired or replaced. Filters are washed, the drain line is flushed, and the outdoor unit is rinsed.",
         },
         {
-          title: "Testing & handover",
-          description:
-            "The unit is run to confirm proper cooling and airflow, the work area is cleaned, and you receive a job summary with warranty details.",
+          title: "Testing",
+          description: "The unit is run to check cooling and airflow, and the work area is cleaned.",
         },
       ],
       included: [
-        "Full diagnostic inspection of the indoor and outdoor units",
-        "Minor fixes such as drain unblocking, thermostat or sensor adjustment, and tightening loose wiring",
-        "Technician labour for the repair you approve",
-        "Cooling performance test after the repair",
+        "Diagnostic inspection of the indoor and outdoor units",
+        "Washing and cleaning of air filters",
+        "Drain line check and flushing",
+        "Refrigerant pressure, temperature, and electrical checks",
+        "Repair or replacement of faulty components",
+        "Cooling test after the work",
       ],
       notIncluded: [
-        "Cost of spare parts and refrigerant gas, which are quoted separately before work starts",
+        "Deep coil and duct cleaning (available as AC Duct & Coil Cleaning)",
         "Installation, relocation, or replacement of the entire unit",
       ],
-      goodToKnow: [
-        "The starting price covers the visit and diagnosis. The final repair cost depends on the fault and the parts needed",
-        "Repairs carry a 30-day workmanship warranty. Spare parts follow the manufacturer's warranty",
-        "If a required part is not in stock, we will schedule a follow-up visit to complete the repair",
-      ],
       faqs: [
-        {
-          question: "How soon can a technician visit?",
-          answer:
-            "In most areas we can schedule a visit the same day or the next day, depending on availability. You can choose a time slot when booking.",
-        },
         {
           question: "My AC is running but not cooling. What could be wrong?",
           answer:
             "Common causes include dirty filters or coils, low refrigerant, a failing capacitor, or a blocked drain. A technician needs to inspect the unit to confirm the exact cause.",
         },
         {
-          question: "Will I know the price before the repair starts?",
+          question: "Why is water leaking from my indoor unit?",
           answer:
-            "Yes. After diagnosis, the technician explains the problem and gives you a quote for parts and labour. You decide whether to go ahead.",
+            "It is usually a blocked or disconnected drain line, a dirty filter causing the coil to freeze, or a damaged drain tray.",
         },
         {
           question: "Do you repair all AC brands and types?",
-          answer: "Yes. We service split, window, ducted, and cassette units from all major brands.",
+          answer: "We service split, window, ducted, and cassette units from all major brands.",
         },
       ],
-      price: "AED 120",
-      ctaHref: "/book?service=ac-repairing",
+      ctaHref: "/book?service=ac-repair-maintenance",
     },
   },
 
-  /* --------------------------- 2. AC Installation & Replacement ---------------------------- */
+  /* ----------------------- 2. AC Duct & Coil Cleaning ---------------------- */
   {
     id: "2",
-    title: "AC Installation & Replacement",
+    title: "AC Duct & Coil Cleaning",
+    description: "Cleaning and sanitization of AC coils, blower fans, drain trays, ducts, grilles, and diffusers.",
+    image: "/grid/duct-cleaning.jpeg",
+    alt: "Technician cleaning AC ducts and coils",
+    detail: {
+      highlights: [
+        { label: "Coils & blower fans", icon: Fan },
+        { label: "Supply & return ducts", icon: Wind },
+        { label: "Grilles & diffusers", icon: Sparkles },
+      ],
+      steps: [
+        {
+          title: "Protection",
+          description:
+            "The team wears PPE, covers the floor and furniture, and isolates the working area with plastic covering.",
+        },
+        {
+          title: "Coil & indoor unit cleaning",
+          description: "Filters, evaporator coil, blower fan, drain tray, and drain pipe are cleaned and sanitized.",
+        },
+        {
+          title: "Duct & vent cleaning",
+          description:
+            "Ducts are brushed and vacuumed with specialist equipment, and the grilles and diffusers are cleaned and sanitized.",
+        },
+        {
+          title: "Clean-up & testing",
+          description: "Waste is collected and removed, and the system is checked for cooling and airflow.",
+        },
+      ],
+      included: [
+        "Cleaning and sanitization of evaporator and condenser coils",
+        "Blower fan, drain tray, and drain pipe cleaning",
+        "Duct brushing and vacuuming",
+        "Grille and diffuser cleaning with sanitization",
+        "Airflow and cooling check",
+      ],
+      notIncluded: [
+        "Repair or replacement of damaged parts and refrigerant gas",
+        "Mold removal or treatment",
+        "Installation, relocation, or any services outside of cleaning",
+      ],
+      faqs: [
+        {
+          question: "What is the difference between coil cleaning and duct cleaning?",
+          answer:
+            "Coil cleaning covers the indoor and outdoor units: the coils, blower fan, and drain tray. Duct cleaning covers the ducts that carry air to each room, along with the grilles and diffusers.",
+        },
+        {
+          question: "What are the signs that my ducts need cleaning?",
+          answer:
+            "Dust coming out of the vents, weak airflow in some rooms, musty smells when the AC runs, or recent renovation work in the property.",
+        },
+        {
+          question: "Do I need to leave the property during the service?",
+          answer: "No, but the AC will be switched off while the team works.",
+        },
+      ],
+      ctaHref: "/book?service=ac-duct-coil-cleaning",
+    },
+  },
+
+  /* -------------------------- 3. MEP Services / AMC ------------------------ */
+  {
+    id: "3",
+    title: "MEP Services / AMC",
     description:
-      "Professional installation of new split and inverter units, or replacement of your old AC, with insulated piping and full testing.",
+      "Mechanical, electrical, and plumbing works, with annual maintenance contracts for villas, apartments, offices, and buildings.",
+    image: "/grid/annual-maintenance.jpeg",
+    alt: "Technician carrying out MEP maintenance",
+    detail: {
+      highlights: [
+        { label: "Mechanical", icon: Fan },
+        { label: "Electrical", icon: Zap },
+        { label: "Plumbing", icon: Droplets },
+      ],
+      steps: [
+        {
+          title: "Site survey",
+          description: "We record your AC, electrical, and plumbing systems and agree the scope of work.",
+        },
+        {
+          title: "Maintenance plan",
+          description: "For AMC customers, a schedule of preventive maintenance visits is agreed for the year.",
+        },
+        {
+          title: "Maintenance & repairs",
+          description:
+            "Technicians carry out maintenance and repairs on AC units, electrical panels, lighting, water pumps, and plumbing fixtures.",
+        },
+        {
+          title: "Reporting",
+          description: "The work carried out on each visit is recorded and shared with you.",
+        },
+      ],
+      included: [
+        "Preventive maintenance of AC, electrical, and plumbing systems",
+        "Electrical works such as DB checks, sockets, switches, and lighting",
+        "Plumbing works such as leak repairs, water heaters, pumps, and fixtures",
+        "Breakdown call-outs",
+      ],
+      notIncluded: ["Major civil, fit-out, or renovation work"],
+      faqs: [
+        {
+          question: "What does MEP stand for?",
+          answer:
+            "Mechanical, Electrical, and Plumbing. It covers the systems that keep a building running, such as air conditioning, power, lighting, and water.",
+        },
+        {
+          question: "What is an AMC?",
+          answer:
+            "An Annual Maintenance Contract. It covers scheduled preventive maintenance of your building systems through the year.",
+        },
+        {
+          question: "Can I get MEP work done without a contract?",
+          answer: "Yes. We also take one-off electrical, plumbing, and AC jobs.",
+        },
+      ],
+      ctaHref: "/book?service=mep-amc",
+    },
+  },
+
+  /* ----------------------- 4. AC Installation & Repair --------------------- */
+  {
+    id: "4",
+    title: "AC Installation & Repair",
+    description:
+      "Installation and replacement of split, inverter, and ducted AC units, with insulated piping, testing, and repairs.",
     image: "/grid/ac-installation.jpg",
     alt: "Technician installing a split AC unit",
     detail: {
-      rating: "4.8",
       highlights: [
-        { label: "Neat, clean finish", icon: Sparkles },
-        { label: "Vacuum & leak tested", icon: ShieldCheck },
-        { label: "Workmanship warranty", icon: BadgeCheck },
+        { label: "Split & inverter units", icon: Snowflake },
+        { label: "Replacement & relocation", icon: Wrench },
+        { label: "Pressure & vacuum tested", icon: ShieldCheck },
       ],
       steps: [
         {
           title: "Site check & planning",
           description:
-            "The technician confirms the best position for the indoor and outdoor units, the pipe route, drain slope, and the power supply before work begins.",
+            "The technician confirms the position for the indoor and outdoor units, the pipe route, drain slope, and the power supply.",
         },
         {
           title: "Old unit removal",
           description:
-            "For replacements, the refrigerant is safely recovered, then the old indoor and outdoor units are disconnected and taken away.",
+            "For replacements, the refrigerant is recovered, then the old indoor and outdoor units are disconnected and removed.",
         },
         {
-          title: "Installation",
+          title: "Installation or repair",
           description:
-            "The mounting bracket and units are fixed securely, insulated copper piping, drain pipe, and wiring are run, and all joints are sealed.",
+            "The mounting bracket and units are fixed, insulated copper piping, drain pipe, and wiring are run, and all joints are sealed. Existing units are repaired where possible.",
         },
         {
           title: "Testing & handover",
           description:
-            "The system is pressure tested and vacuumed, then commissioned and checked for cooling. The area is cleaned and you get a walkthrough of the remote and warranty details.",
+            "The system is pressure tested and vacuumed, then commissioned and checked for cooling, and the area is cleaned.",
         },
       ],
       included: [
         "Installation of the indoor and outdoor unit of a split or inverter AC",
-        "Standard copper piping with insulation, drain pipe, and electrical connection to an existing power point",
+        "Copper piping with insulation, drain pipe, and electrical connection to an existing power point",
         "Nitrogen pressure test and vacuum before the system is charged",
-        "Removal and disposal of your old unit when replacing",
-        "Test run, cooling check, and a short demonstration",
+        "Removal of your old unit when replacing",
+        "Repair of installation faults such as leaks, poor drainage, or loose connections",
+        "Test run and cooling check",
       ],
       notIncluded: [
         "The AC unit itself, unless purchased separately",
-        "Extra piping beyond the standard length, additional wiring, or new power points",
         "Civil work such as core drilling, wall cutting, or ceiling work",
         "Scaffolding or lifting equipment for high-rise or hard-to-reach outdoor units",
-      ],
-      goodToKnow: [
-        "The starting price is per unit for a standard split AC with standard piping. Final price is confirmed after the site check",
-        "Installation usually takes 2 to 4 hours per unit",
-        "Some buildings require approval from the landlord or building management for outdoor unit placement or work at height. Please check before booking",
-        "Installation work carries a 90-day workmanship warranty. The AC unit itself follows the manufacturer's warranty",
       ],
       faqs: [
         {
@@ -179,327 +283,145 @@ const ITEMS: Item[] = [
             "We install units you have already bought. If you are unsure which capacity suits your room, the technician can advise on the right size.",
         },
         {
-          question: "How long does installation take?",
-          answer:
-            "A standard split unit usually takes 2 to 4 hours. Longer pipe runs, difficult access, or several units can take longer.",
-        },
-        {
           question: "Can I replace my old AC with a different size or type?",
           answer:
-            "Usually yes, as long as the piping and power supply suit the new unit. If they do not, we explain what needs to change and quote it before starting.",
+            "Usually yes, as long as the piping and power supply suit the new unit. If they do not, we explain what needs to change before starting.",
         },
         {
-          question: "Can you also move my AC to another room or property?",
+          question: "Can you move my AC to another room or property?",
           answer:
-            "Yes. Relocation includes safe refrigerant recovery, removing the unit, and reinstalling it at the new location. Mention it when booking so the right time is reserved.",
+            "Yes. Relocation includes refrigerant recovery, removing the unit, and reinstalling it at the new location.",
         },
       ],
-      price: "AED 350",
-      ctaHref: "/book?service=ac-installation-replacement",
+      ctaHref: "/book?service=ac-installation-repair",
     },
   },
 
-  /* ---------------------------- 3. Maintenance ----------------------------- */
+  /* --------------------------- 5. Painting Services ------------------------ */
   {
-    id: "3",
-    title: "AC Maintenance",
-    description: "Regular maintenance service to ensure your AC system runs efficiently and lasts longer.",
-    image: "/grid/ac-maintenance.png",
-    alt: "Technician performing AC maintenance",
+    id: "5",
+    title: "Painting Services",
+    description:
+      "Interior and exterior painting for villas, apartments, and offices, including surface preparation and priming.",
+    image: "/grid/painting.svg",
+    alt: "Illustration of a painter rolling paint onto a wall",
     detail: {
-      rating: "4.9",
       highlights: [
-        { label: "Lower energy bills", icon: Zap },
-        { label: "Fewer breakdowns", icon: ShieldCheck },
-        { label: "Longer AC lifespan", icon: Clock },
+        { label: "Interior painting", icon: Paintbrush },
+        { label: "Exterior painting", icon: Building2 },
+        { label: "Surface preparation", icon: Wrench },
       ],
       steps: [
         {
-          title: "Check-up",
+          title: "Site visit",
+          description: "We inspect the walls, measure the area, and discuss colors and finishes.",
+        },
+        {
+          title: "Protection & preparation",
           description:
-            "The technician inspects the filters, thermostat, airflow, unusual noises, and electrical connections.",
+            "Floors and furniture are covered, then cracks and holes are filled, surfaces are sanded, and a primer is applied where needed.",
         },
         {
-          title: "Cleaning",
-          description:
-            "Filters are washed, the indoor unit is wiped down, the drain line is flushed, and the outdoor unit is rinsed.",
-        },
-        {
-          title: "Performance test",
-          description:
-            "Refrigerant pressure, temperature drop, and electrical readings are checked against the unit's normal range.",
-        },
-        {
-          title: "Service summary",
-          description:
-            "You get a short summary of what was done and any issues spotted, with advice on what to do next.",
-        },
-      ],
-      included: [
-        "Washing and cleaning of air filters",
-        "Drain line check and flushing to prevent leaks",
-        "Rinsing of the outdoor unit",
-        "Refrigerant pressure and temperature check",
-        "Inspection of capacitor, wiring, and electrical connections",
-      ],
-      notIncluded: [
-        "Deep cleaning of the coils (available as AC Coil Cleaning)",
-        "Refrigerant gas refilling and replacement of parts",
-        "Repair of faults found during the visit, which are quoted separately",
-      ],
-      goodToKnow: [
-        "The price is per AC unit and a visit takes about 45 to 60 minutes",
-        "For units that run daily, a service every 3 to 6 months is a good routine",
-        "If a fault is found, the technician explains it and gives you a quote before doing any extra work",
-      ],
-      faqs: [
-        {
-          question: "How often should I get my AC serviced?",
-          answer:
-            "For units that run most of the day, every 3 to 6 months is a good rule. Units used less often can be serviced once or twice a year.",
-        },
-        {
-          question: "What is the difference between maintenance and coil cleaning?",
-          answer:
-            "Maintenance is a routine check and clean of filters, drain, and basic components. Coil cleaning is a deeper service that cleans and sanitizes the coils, blower, and drain tray.",
-        },
-        {
-          question: "Is the price per unit or per property?",
-          answer: "The price is per AC unit. If you have several units, you can add them in one booking.",
-        },
-        {
-          question: "Do I need to do anything before the visit?",
-          answer:
-            "Just make sure the technician can reach the indoor unit and the outdoor unit. Moving furniture away from the unit helps.",
-        },
-      ],
-      price: "AED 150",
-      ctaHref: "/book?service=ac-maintenance",
-    },
-  },
-
-  /* --------------------------- 4. Coil cleaning ---------------------------- */
-  {
-    id: "4",
-    title: "AC Coil & Duct Cleaning",
-    description: "Deep cleaning and sanitization of evaporator and condenser coils for better cooling and air quality.",
-    image: "/grid/duct-cleaning.jpeg",
-    alt: "Technician cleaning AC coils",
-    detail: {
-      rating: "4.9",
-      highlights: [
-        { label: "Better breathing", icon: Wind },
-        { label: "Improved AC lifespan", icon: ShieldCheck },
-        { label: "Improved air quality", icon: Leaf },
-      ],
-      steps: [
-        {
-          title: "Arrival & protection",
-          description:
-            "The team arrives wearing full PPE, including masks, gloves, and shoe covers. The working area is isolated using plastic covering.",
-        },
-        {
-          title: "Cleaning and sanitization",
-          description:
-            "Eco-friendly products are used to clean and sanitize the plastic cover of the AC, filters, and the main cooling unit, including the coils, blower fan, drain tray, and pipe.",
+          title: "Painting",
+          description: "Paint is applied with rollers and brushes to walls, ceilings, doors, and trims as agreed.",
         },
         {
           title: "Clean-up",
-          description: "All waste and residue are collected and disposed of properly, ensuring a mess-free service.",
-        },
-        {
-          title: "Service report",
-          description: "You receive a short report of the work done and anything found during the service.",
+          description: "Coverings are removed and the area is cleaned.",
         },
       ],
       included: [
-        "Cleaning and sanitization of both evaporator and condenser coils",
-        "Cleaning and sanitization of the fan motor",
-        "Inspection for coil damage or corrosion to help prevent future issues",
+        "Covering of floors, furniture, and fittings",
+        "Filling of minor cracks and holes, and light sanding",
+        "Primer where required",
+        "Painting of ceilings, walls, doors, and skirting as agreed",
+        "Clean-up after the job",
       ],
       notIncluded: [
-        "Repair or replacement of damaged parts not related to cleaning",
-        "Installation, relocation, or any services outside of coil cleaning",
-      ],
-      goodToKnow: [
-        "Price and duration are estimates and may be revised after on-site inspection",
-        "If mold or maintenance issues are found inside the AC, the service will pause and a specialized team will provide a separate solution and quote",
-        "If access panels are needed to reach hidden areas, an extra charge of AED 250 per panel applies (plus VAT and service fees), including ceiling cuts and white paint touch-up around grills and panels",
+        "Major plaster repairs, waterproofing, or damp treatment",
+        "Wallpaper, textures, or decorative finishes unless agreed",
+        "Moving heavy furniture or appliances",
       ],
       faqs: [
         {
-          question: "How long does the AC coil cleaning service take?",
-          answer:
-            "A standard split unit usually takes around 1.5 to 2 hours. Larger or hard-to-reach units can take longer.",
+          question: "Do you supply the paint?",
+          answer: "We can supply the paint, or use paint you have already bought.",
         },
         {
-          question: "Do you use chemicals on the coils, and will they cause any damage?",
-          answer:
-            "We use eco-friendly, safe cleaning solutions specially for AC coil cleaning service. These gentle yet effective agents clean thoroughly without causing any damage, ensuring your coils stay protected and your system runs efficiently.",
+          question: "Do I need to move my furniture?",
+          answer: "Light items are moved and everything else is covered. Heavy furniture and appliances should be moved beforehand.",
         },
         {
-          question: "Can you clean the coils if the unit is mounted high on the wall?",
-          answer:
-            "Yes. Our technicians bring ladders and the right equipment to work safely on units mounted high on the wall or above the ceiling.",
+          question: "Do you paint exteriors?",
+          answer: "Yes. We paint villa exteriors and boundary walls.",
         },
       ],
-      price: "AED 600",
-      ctaHref: "/book?service=ac-coil-cleaning",
+      ctaHref: "/book?service=painting",
     },
   },
 
-  /* ------------------------ 5. Full system cleaning ------------------------ */
-  {
-    id: "5",
-    title: "Full System Cleaning",
-    description: "Comprehensive cleaning of your entire AC system for optimal performance and air quality.",
-    image: "/grid/full-system-clean.jpeg",
-    alt: "Technician cleaning full AC system",
-    detail: {
-      rating: "4.9",
-      highlights: [
-        { label: "Complete cleaning", icon: Sparkles },
-        { label: "Peak cooling", icon: Snowflake },
-        { label: "Healthier air", icon: Wind },
-      ],
-      steps: [
-        {
-          title: "Arrival & protection",
-          description:
-            "The team arrives wearing full PPE and covers the floor and furniture. The working area is isolated using plastic covering.",
-        },
-        {
-          title: "Indoor unit deep clean",
-          description:
-            "Filters, evaporator coil, blower fan, drain tray, and drain pipe are cleaned and sanitized with eco-friendly products.",
-        },
-        {
-          title: "Ducts & vents",
-          description: "The ducts are brushed and vacuumed, and the grilles and diffusers are cleaned and sanitized.",
-        },
-        {
-          title: "Outdoor unit & final test",
-          description:
-            "The condenser coil and fan are cleaned, the whole system is tested for cooling and airflow, and you receive a service report.",
-        },
-      ],
-      included: [
-        "Indoor unit cleaning: filters, evaporator coil, blower fan, drain tray, and drain pipe",
-        "Outdoor condenser coil and fan cleaning",
-        "Duct, grille, and diffuser cleaning with sanitization",
-        "Performance test and service report",
-      ],
-      notIncluded: [
-        "Repair or replacement of damaged parts and refrigerant gas",
-        "Mold removal or treatment",
-        "Installation, relocation, or any services outside of cleaning",
-      ],
-      goodToKnow: [
-        "The starting price is for a standard apartment system. Final price depends on the number of units and ducts, and is confirmed after inspection",
-        "The service usually takes 4 to 6 hours depending on the size of the system",
-        "If access panels are needed to reach hidden areas, an extra charge of AED 250 per panel applies (plus VAT and service fees)",
-      ],
-      faqs: [
-        {
-          question: "What is the difference between full system and coil cleaning?",
-          answer:
-            "Coil cleaning covers the indoor unit and coils. Full system cleaning also includes the ducts, grilles, and the outdoor unit, so the whole system is cleaned in one visit.",
-        },
-        {
-          question: "When should I choose full system cleaning?",
-          answer:
-            "It suits homes that have not had a deep clean in over a year, have reduced cooling, smell musty air from the vents, or have recently been renovated.",
-        },
-        {
-          question: "Do I need to leave the property during the service?",
-          answer:
-            "No, but the AC will be off while the team works. Some rooms may be restricted for a few hours while ducts and units are being cleaned.",
-        },
-        {
-          question: "Will the service make a mess?",
-          answer: "No. The work area is covered and sealed, and waste is collected and removed from your property.",
-        },
-      ],
-      price: "AED 950",
-      ctaHref: "/book?service=full-system-cleaning",
-    },
-  },
-
-  /* ------------------------------ 6. AMC plan ------------------------------ */
+  /* ------------------------- 6. Ducting / HVAC & VAV ----------------------- */
   {
     id: "6",
-    title: "Annual Maintenance (AMC)",
-    description: "Regular maintenance and servicing of your AC system to ensure optimal performance and longevity.",
-    image: "/grid/annual-maintenance.jpeg",
-    alt: "Technician performing annual maintenance on an AC unit",
+    title: "Ducting / HVAC & VAV",
+    description: "Fabrication and installation of ductwork, VAV system servicing, and airflow balancing for HVAC systems.",
+    image: "/grid/ducting.svg",
+    alt: "Illustration of HVAC ductwork with a VAV box",
     detail: {
-      rating: "4.8",
       highlights: [
-        { label: "4 scheduled visits", icon: CalendarCheck },
-        { label: "Priority support", icon: PhoneCall },
-        { label: "Discounted parts", icon: Percent },
+        { label: "Duct installation", icon: Wind },
+        { label: "VAV systems", icon: Thermometer },
+        { label: "Airflow balancing", icon: Fan },
       ],
       steps: [
         {
-          title: "Site survey & plan",
-          description: "We record your units, their make and model, and agree a visit schedule that suits you.",
-        },
-        {
-          title: "Scheduled visits",
+          title: "Survey & assessment",
           description:
-            "A technician visits every quarter to clean filters, flush drains, check gas pressure, and inspect electrical parts.",
+            "The existing ducts and HVAC equipment are inspected, airflow is measured at each outlet, and leaks, blockages, or undersized ducts are identified.",
         },
         {
-          title: "Priority breakdown support",
+          title: "Design",
+          description: "The duct layout, sizes, and VAV settings needed for each zone are planned.",
+        },
+        {
+          title: "Installation & servicing",
           description:
-            "If your AC stops working between visits, call us and your request is given priority scheduling.",
+            "Ducts are fabricated, installed, insulated, and sealed. VAV boxes, dampers, and controls are installed, repaired, or serviced.",
         },
         {
-          title: "Reports & renewal",
-          description: "You receive a report after every visit, and a reminder before your plan ends so you can renew.",
+          title: "Balancing & commissioning",
+          description: "Airflow is balanced across each room and zone, and temperatures are checked.",
         },
       ],
       included: [
-        "4 scheduled maintenance visits per year for each unit",
-        "Filter cleaning, drain flushing, gas pressure, and electrical checks on every visit",
-        "Priority booking for breakdown calls",
-        "Discounted rates on spare parts and repair labour",
-        "A service report after every visit",
+        "Ductwork fabrication, installation, and replacement",
+        "Duct insulation and sealing",
+        "Installation and servicing of VAV boxes, dampers, and controls",
+        "Grilles, diffusers, and return air vents",
+        "Airflow testing and balancing",
       ],
       notIncluded: [
-        "Cost of spare parts and refrigerant gas, which are discounted but not free",
-        "Coil cleaning and duct cleaning, which are available at member rates",
-        "Damage caused by misuse, power surges, or work by third parties",
-      ],
-      goodToKnow: [
-        "The plan runs for 12 months and the price is per AC unit",
-        "Visits are scheduled in advance and can be rescheduled with 24 hours' notice",
-        "Plans can be customized for villas, offices, and properties with multiple units",
+        "Supply of new AC or air handling units, unless agreed",
+        "Civil work such as ceiling openings, false ceilings, or wall cutting",
+        "Building management system (BMS) programming beyond basic VAV settings",
       ],
       faqs: [
         {
-          question: "What does an AMC plan cover?",
+          question: "What is a VAV system?",
           answer:
-            "It covers scheduled routine maintenance visits through the year, priority support, and discounted rates on repairs and parts.",
+            "VAV stands for Variable Air Volume. It adjusts the amount of cooled air sent to each zone based on that zone's temperature setting.",
         },
         {
-          question: "How many visits are included?",
+          question: "Why are some rooms warmer than others?",
           answer:
-            "The standard plan includes 4 visits a year, one every quarter. Plans with more visits can be arranged for heavy-use properties.",
+            "Common causes are leaking or undersized ducts, closed or faulty dampers, a failing VAV box, or an unbalanced system. A survey finds the exact cause.",
         },
         {
-          question: "Can I add more AC units later?",
-          answer: "Yes. Additional units can be added to your plan at any time and will run until your plan end date.",
-        },
-        {
-          question: "What happens if my AC breaks down between visits?",
-          answer:
-            "Call us and your request is given priority. Labour for the repair and parts are charged at your member discount.",
+          question: "Do you handle commercial projects?",
+          answer: "Yes. We carry out ducting and VAV work for offices, shops, and commercial buildings, as well as homes.",
         },
       ],
-      priceLabel: "Starting from",
-      price: "AED 650 / year",
-      ctaHref: "/book?service=annual-maintenance",
+      ctaHref: "/book?service=ducting-hvac-vav",
     },
   },
 ];
@@ -522,10 +444,10 @@ export default function CardGridSection() {
       {/*  section heading */}
       <div className='mx-auto mb-16 max-w-3xl text-center'>
         <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl bg-gradient-to-r from-sky-800 to-cyan-500 bg-clip-text text-transparent dark:from-white dark:to-sky-200'>
-          Comprehensive AC Solutions for Ultimate Comfort
+          Complete AC, MEP & Painting Solutions
         </h2>
         <p className='mt-4 text-sm sm:text-base text-zinc-600 dark:text-white/70'>
-          We provide high-quality cooling services designed to withstand the intense Dubai heat.
+          High-quality technical services for homes and businesses, built to withstand the intense Dubai heat.
         </p>
       </div>
 

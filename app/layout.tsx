@@ -14,12 +14,18 @@ export const metadata: Metadata = {
     template: "%s | Pluto Cool Technical Services",
   },
   description:
-    "Professional AC maintenance, deep cleaning, repair, and installation services in Dubai. 24/7 reliable technical support to keep your home cool.",
+    "AC repair & maintenance, duct & coil cleaning, AC installation, MEP services & AMC, painting, and HVAC ducting & VAV in Dubai.",
   keywords: [
     "AC repair Dubai",
     "AC installation Dubai",
-    "AC cleaning service Dubai",
+    "AC duct cleaning Dubai",
+    "AC coil cleaning Dubai",
     "air conditioning maintenance Dubai",
+    "MEP services Dubai",
+    "AMC Dubai",
+    "painting services Dubai",
+    "HVAC ducting Dubai",
+    "VAV system Dubai",
     "Pluto Cool Technical Services",
     "best AC technicians Dubai",
   ],
@@ -38,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pluto Cool Technical Services | AC Repair & Installation Dubai",
     description:
-      "Professional AC maintenance, cleaning, and repair services in Dubai. Expert technicians available 24/7.",
+      "AC repair & maintenance, duct & coil cleaning, AC installation, MEP services & AMC, painting, and HVAC ducting & VAV in Dubai.",
     url: "https://www.plutocool.com", // Replace with your actual domain
     siteName: "Pluto Cool Technical Services",
     locale: "en_AE",

@@ -16,11 +16,11 @@ const phoneLink = "tel:+971565204977";
 
 const SERVICES = [
   "AC Repair & Maintenance",
-  "AC Coil & Duct Cleaning",
-  "MEP & AMC Services",
+  "AC Duct & Coil Cleaning",
+  "MEP Services / AMC",
   "AC Installation & Repair",
   "Painting Services",
-  "Ducting, VAV & HAVC Services",
+  "Ducting / HVAC & VAV",
 ];
 
 const YEAR = new Date().getFullYear();

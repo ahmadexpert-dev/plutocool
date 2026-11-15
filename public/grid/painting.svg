@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#0B1626"/>
+    </linearGradient>
+    <linearGradient id="fresh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#BAE6FD"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#7DD3FC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Old wall -->
+  <rect width="800" height="470" fill="url(#room)"/>
+  <!-- Freshly painted section -->
+  <path d="M0 0 H455 V470 H0 Z" fill="url(#fresh)"/>
+  <!-- Wet edge -->
+  <path d="M455 0 V470" stroke="#E0F2FE" stroke-width="4" opacity="0.7"/>
+
+  <!-- Window on old wall -->
+  <rect x="560" y="70" width="180" height="150" rx="6" fill="url(#sky)" stroke="#94A3B8" stroke-width="8"/>
+  <path d="M650 70 V220 M560 145 H740" stroke="#94A3B8" stroke-width="6"/>
+  <circle cx="700" cy="110" r="18" fill="#FEF3C7" opacity="0.9"/>
+
+  <!-- Skirting and floor -->
+  <rect y="470" width="800" height="16" fill="#E2E8F0"/>
+  <rect y="486" width="800" height="114" fill="url(#floor)"/>
+  <!-- Drop cloth -->
+  <path d="M40 500 H560 L600 590 H10 Z" fill="#F1F5F9" opacity="0.85"/>
+  <path d="M120 500 L100 590 M260 500 L250 590 M400 500 L410 590" stroke="#CBD5E1" stroke-width="3"/>
+
+  <!-- Step ladder -->
+  <g stroke="#F59E0B" stroke-width="10" stroke-linecap="round">
+    <path d="M110 520 L170 250 L230 520"/>
+    <path d="M128 440 H212 M143 370 H197 M157 305 H183"/>
+  </g>
+  <rect x="150" y="236" width="44" height="18" rx="4" fill="#FBBF24"/>
+
+  <!-- Paint bucket -->
+  <path d="M250 470 H340 L330 545 H260 Z" fill="#0284C7" stroke="#E0F2FE" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="295" cy="470" rx="45" ry="10" fill="#7DD3FC" stroke="#E0F2FE" stroke-width="4"/>
+  <path d="M252 472 Q295 420 338 472" stroke="#CBD5E1" stroke-width="4" fill="none"/>
+  <rect x="266" y="495" width="58" height="24" rx="4" fill="#E0F2FE"/>
+
+  <!-- Paint tray with roller -->
+  <path d="M370 540 H520 L500 575 H385 Z" fill="#64748B" stroke="#E2E8F0" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M392 548 H498 L488 566 H398 Z" fill="#38BDF8"/>
+
+  <!-- Long-handled roller on wall -->
+  <rect x="455" y="150" width="150" height="56" rx="28" fill="#38BDF8" stroke="#E0F2FE" stroke-width="5"/>
+  <path d="M530 206 V240 L560 270 V500" stroke="#E2E8F0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="545" y="420" width="30" height="90" rx="12" fill="#0EA5E9" stroke="#E0F2FE" stroke-width="3"/>
+
+  <!-- Brush resting on bucket -->
+  <path d="M330 430 L380 380" stroke="#B45309" stroke-width="10" stroke-linecap="round"/>
+  <path d="M318 442 L336 424 L350 438 L332 456 Z" fill="#38BDF8" stroke="#E0F2FE" stroke-width="2"/>
+</svg>
