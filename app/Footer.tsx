@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin, Clock, ArrowUpRight, Mail } from "lucide-react";
 
+import { SERVICES, serviceHref } from "@/lib/services";
+
 // ── Contact config ──────────────────────────────────────────────────────────
 
 // Fixed: Removed the '+' sign as required by the wa.me API format
@@ -14,21 +16,13 @@ const whatsappUrl = `https://wa.me/${whatsAppPhoneNumber}?text=${encodedMessage}
 const phoneNumberDisplay = "+971 56 520 4977";
 const phoneLink = "tel:+971565204977";
 
-const SERVICES = [
-  "AC Repair & Maintenance",
-  "AC Duct & Coil Cleaning",
-  "MEP Services / AMC",
-  "AC Installation & Repair",
-  "Painting Services",
-  "Ducting / HVAC & VAV",
-];
 
 const YEAR = new Date().getFullYear();
 
 // ── Component ────────────────────────────────────────────────────────────────
 export default function Footer() {
   return (
-    <footer className='w-full bg-[#070e1a] border-t border-white/10 text-white/80'>
+    <footer id='contact' className='w-full bg-[#070e1a] border-t border-white/10 text-white/80'>
       {/* ── Top strip: WhatsApp CTA ─────────────────────────────────────── */}
       <div className='bg-[#0B1626] border-b border-white/10'>
         <div className='mx-auto max-w-6xl px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-4'>
@@ -128,11 +122,14 @@ export default function Footer() {
         <div>
           <h3 className='text-xs font-semibold uppercase tracking-widest text-sky-400 mb-4'>Our Services</h3>
           <ul className='space-y-2.5'>
-            {SERVICES.map((service) => (
-              <li key={service}>
-                <span className='text-sm text-white/60 hover:text-white transition-colors duration-150 cursor-default'>
-                  {service}
-                </span>
+            {SERVICES.map(({ slug, title }) => (
+              <li key={slug}>
+                <Link
+                  href={serviceHref(slug)}
+                  className='text-sm text-white/60 hover:text-white transition-colors duration-150'
+                >
+                  {title}
+                </Link>
               </li>
             ))}
           </ul>

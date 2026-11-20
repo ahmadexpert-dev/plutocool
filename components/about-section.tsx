@@ -64,7 +64,7 @@ export default function AboutSection({
   className = "",
 }: AboutSectionProps) {
   return (
-    <section className={`relative overflow-hidden bg-[#16263a] py-16 text-white w-full sm:py-24 ${className}`}>
+    <section id='about' className={`relative overflow-hidden bg-[#16263a] py-16 text-white w-full sm:py-24 ${className}`}>
       {/* soft cyan glow, echoing the hero's cool-air effect */}
       <div
         aria-hidden

@@ -4,6 +4,7 @@
  * Hero section — Pluto Cool Technical Services
  */ import { useEffect, useRef, useState, memo, useCallback, type FormEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   PlugZap,
@@ -37,6 +38,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { AirflowLines } from "@/components/AirflowLines";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import { serviceHref } from "@/lib/services";
+
+const MotionLink = motion.create(Link);
 
 // ---------------------------------------------------------------------------
 // Content
@@ -51,6 +55,7 @@ const TIME_SLOTS = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM"];
 export const SERVICES = [
   {
     id: "AC Repair & Maintenance",
+    slug: "ac-repair-maintenance",
     title: "AC Repair & Maintenance",
     description: "Fault diagnosis, repairs, and routine servicing for all types of AC units.",
     icon: Wrench,
@@ -64,6 +69,7 @@ export const SERVICES = [
   },
   {
     id: "AC Duct & Coil Cleaning",
+    slug: "ac-duct-coil-cleaning",
     title: "AC Duct & Coil Cleaning",
     description: "Cleaning and sanitization of AC coils, ducts, and vents.",
     icon: Droplets,
@@ -77,6 +83,7 @@ export const SERVICES = [
   },
   {
     id: "MEP Services / AMC",
+    slug: "mep-services-amc",
     title: "MEP Services / AMC",
     description: "Coordinated mechanical, electrical, and plumbing support with planned annual maintenance contracts.",
     icon: Building2,
@@ -90,6 +97,7 @@ export const SERVICES = [
   },
   {
     id: "AC Installation & Repair",
+    slug: "ac-installation-repair",
     title: "AC Installation & Repair",
     description: "AC installation, replacement, and repair for split, window, and ducted systems.",
     icon: PlugZap,
@@ -103,6 +111,7 @@ export const SERVICES = [
   },
   {
     id: "Painting Services",
+    slug: "painting-services",
     title: "Painting Services",
     description: "Interior and exterior painting with surface preparation and priming.",
     icon: Paintbrush,
@@ -116,6 +125,7 @@ export const SERVICES = [
   },
   {
     id: "Ducting / HVAC & VAV",
+    slug: "ducting-hvac-vav",
     title: "Ducting / HVAC & VAV",
     description: "Ducting installation and airflow balancing for HVAC systems, including VAV equipment.",
     icon: Wind,
@@ -141,14 +151,14 @@ const ServiceCards = memo(function ServiceCards({
       {SERVICES.map((service) => {
         const Icon = service.icon;
         return (
-          <motion.button
+          <MotionLink
             key={service.id}
-            type='button'
+            href={serviceHref(service.slug)}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * SERVICES.indexOf(service) }}
             onClick={() => onSelect?.(service.id)}
-            className='w-full rounded-2xl  border border-white/25 bg-white/10 p-3.5 text-left shadow-lg shadow-black/20 backdrop-blur-xl transition-transform duration-400 hover:scale-102 hover:-translate-y-2 hover:border-white/40 hover:bg-white/15 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7BD4F2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1626] sm:p-4'
+            className='block w-full rounded-2xl  border border-white/25 bg-white/10 p-3.5 text-left shadow-lg shadow-black/20 backdrop-blur-xl transition-transform duration-400 hover:scale-102 hover:-translate-y-2 hover:border-white/40 hover:bg-white/15 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7BD4F2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1626] sm:p-4'
           >
             <Card className='bg-white/5 border-white/10 text-white w-full'>
               <CardHeader className='flex flex-row items-center gap-4 space-y-0 pb-2 w-full'>
@@ -158,7 +168,7 @@ const ServiceCards = memo(function ServiceCards({
                 <CardTitle className='text-sm font-medium tracking-wide'>{service.title}</CardTitle>
               </CardHeader>
             </Card>
-          </motion.button>
+          </MotionLink>
         );
       })}
     </div>

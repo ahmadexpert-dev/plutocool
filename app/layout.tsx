@@ -9,6 +9,7 @@ const manrope = Manrope({
 
 // Optimized SEO Metadata for Dubai Local Business
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.plutocool.com"),
   title: {
     default: "Pluto Cool Technical Services | AC Repair & Installation Dubai",
     template: "%s | Pluto Cool Technical Services",

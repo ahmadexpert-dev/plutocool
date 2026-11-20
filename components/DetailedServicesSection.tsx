@@ -244,7 +244,7 @@ const SERVICES_DATA: DetailedService[] = [
     description:
       "From a single room to a full villa or office, our painters cover floors and furniture, fill cracks and holes, sand and prime surfaces, and paint walls, ceilings, doors, and trims. We also paint villa exteriors and boundary walls.",
     icon: Paintbrush,
-    placeholderFilename: "/grid/painting.svg",
+    placeholderFilename: "/services/painting-exterior.jpg",
     accentText: "text-sky-400",
     glowBorder: "hover:border-sky-400/40",
     problems: [
@@ -273,7 +273,7 @@ const SERVICES_DATA: DetailedService[] = [
     description:
       "Warm rooms and noisy vents are often caused by leaking, undersized, or unbalanced ductwork. Our HVAC team fabricates and installs insulated ducts, installs and services VAV boxes and dampers, and balances airflow zone by zone for villas, offices, and commercial buildings.",
     icon: Wind,
-    placeholderFilename: "/grid/ducting.svg",
+    placeholderFilename: "/services/hvac-indoor.jpg",
     accentText: "text-sky-400",
     glowBorder: "hover:border-sky-400/40",
     problems: [

@@ -2,7 +2,9 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
+  ArrowRight,
   Building2,
   Droplets,
   Fan,
@@ -20,9 +22,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import ServiceDetailContent, { type ServiceDetail } from "./service-detail-content";
+import { serviceHref } from "@/lib/services";
 
 type Item = {
   id: string;
+  /** Matches a slug in lib/services for the full service page */
+  slug: string;
   title: string;
   description: string;
   image: string;
@@ -39,6 +44,7 @@ const ITEMS: Item[] = [
   /* ----------------------- 1. AC Repair & Maintenance ---------------------- */
   {
     id: "1",
+    slug: "ac-repair-maintenance",
     title: "AC Repair & Maintenance",
     description:
       "Diagnosis and repair of cooling problems, water leaks, and electrical faults, plus routine servicing of indoor and outdoor units.",
@@ -105,6 +111,7 @@ const ITEMS: Item[] = [
   /* ----------------------- 2. AC Duct & Coil Cleaning ---------------------- */
   {
     id: "2",
+    slug: "ac-duct-coil-cleaning",
     title: "AC Duct & Coil Cleaning",
     description: "Cleaning and sanitization of AC coils, blower fans, drain trays, ducts, grilles, and diffusers.",
     image: "/grid/duct-cleaning.jpeg",
@@ -170,6 +177,7 @@ const ITEMS: Item[] = [
   /* -------------------------- 3. MEP Services / AMC ------------------------ */
   {
     id: "3",
+    slug: "mep-services-amc",
     title: "MEP Services / AMC",
     description:
       "Mechanical, electrical, and plumbing works, with annual maintenance contracts for villas, apartments, offices, and buildings.",
@@ -230,6 +238,7 @@ const ITEMS: Item[] = [
   /* ----------------------- 4. AC Installation & Repair --------------------- */
   {
     id: "4",
+    slug: "ac-installation-repair",
     title: "AC Installation & Repair",
     description:
       "Installation and replacement of split, inverter, and ducted AC units, with insulated piping, testing, and repairs.",
@@ -300,11 +309,12 @@ const ITEMS: Item[] = [
   /* --------------------------- 5. Painting Services ------------------------ */
   {
     id: "5",
+    slug: "painting-services",
     title: "Painting Services",
     description:
       "Interior and exterior painting for villas, apartments, and offices, including surface preparation and priming.",
-    image: "/grid/painting.svg",
-    alt: "Illustration of a painter rolling paint onto a wall",
+    image: "/services/painting-interior.jpg",
+    alt: "Pluto Cool painter rolling paint onto a living room wall",
     detail: {
       highlights: [
         { label: "Interior painting", icon: Paintbrush },
@@ -363,10 +373,11 @@ const ITEMS: Item[] = [
   /* ------------------------- 6. Ducting / HVAC & VAV ----------------------- */
   {
     id: "6",
+    slug: "ducting-hvac-vav",
     title: "Ducting / HVAC & VAV",
     description: "Fabrication and installation of ductwork, VAV system servicing, and airflow balancing for HVAC systems.",
-    image: "/grid/ducting.svg",
-    alt: "Illustration of HVAC ductwork with a VAV box",
+    image: "/services/hvac-rooftop.jpg",
+    alt: "Pluto Cool technician checking a rooftop HVAC unit",
     detail: {
       highlights: [
         { label: "Duct installation", icon: Wind },
@@ -440,7 +451,7 @@ export default function CardGridSection() {
   };
 
   return (
-    <section className='mx-auto w-full  px-4 py-16 sm:px-6 md:py-24 lg:px-8  bg-sky-700/10 dark:bg-zinc-950  text-zinc-900 dark:text-zinc-50'>
+    <section id='services' className='mx-auto w-full  px-4 py-16 sm:px-6 md:py-24 lg:px-8  bg-sky-700/10 dark:bg-zinc-950  text-zinc-900 dark:text-zinc-50'>
       {/*  section heading */}
       <div className='mx-auto mb-16 max-w-3xl text-center'>
         <h2 className='text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl bg-gradient-to-r from-sky-800 to-cyan-500 bg-clip-text text-transparent dark:from-white dark:to-sky-200'>
@@ -482,7 +493,14 @@ export default function CardGridSection() {
               </CardDescription>
             </CardContent>
 
-            <CardFooter className='bg-[#abd0eb]'>
+            <CardFooter className='bg-[#abd0eb] flex flex-col-reverse gap-3 sm:flex-row sm:items-center'>
+              <Link
+                href={serviceHref(item.slug)}
+                className='inline-flex items-center gap-1.5 text-sm font-semibold text-[#063353] transition-colors hover:text-[#0b7fd1]'
+              >
+                Full service page
+                <ArrowRight className='size-4' />
+              </Link>
               <Button
                 className='ml-auto w-full rounded-xl border-0 bg-gradient-to-r from-[#0b7fd1] to-[#12a4e0] font-medium text-white shadow-md transition-all hover:from-[#0a6fb8] hover:to-[#0f94ca] hover:shadow-cyan-500/30 sm:w-auto'
                 onClick={() => openDetail(item)}
